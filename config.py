@@ -9,14 +9,14 @@ class Config:
     seed = 42
 
     experiment_uri = "http://127.0.0.1:5000"
-    experiments_name = "House_Prices_Kaggle"
+    experiments_name = "Titanic_Kaggle"
 
-    path_train_data = Path(r".\Titanic2\data\raw\train.csv")
-    path_test_data = Path(r".\Titanic2\data\raw\test.csv")
-
-    path_to_save_models = Path(r".\Titanic2\Models")
-
-    path_to_submission = Path(r".\Titanic2\data\submission")
+    ROOT = Path(__file__).resolve().parent
+    
+    path_train_data = ROOT / "data/raw/train.csv"
+    path_test_data = ROOT / "data/raw/test.csv"
+    path_to_save_models = ROOT / "Models"
+    path_to_submission = ROOT / "data/submission"
 
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
