@@ -1,56 +1,25 @@
 # -*- coding: utf-8 -*-
-import torch
-import torch.nn as nn
-import mlflow
-from sklearn.base import BaseEstimator, ClassifierMixin, clone
-from sklearn.model_selection import KFold
-
-import pandas as pd
-import numpy as np
-import os
-
-from tqdm.auto import tqdm
+import random
 from copy import deepcopy
-from pathlib import Path
 
-from src.custom_datasets.dataset import TableDataset
-from src.custom_datasets.dataset import transform_data
-from src.custom_models.myMLP import MyModel
+import mlflow
 
 # from config import Config
-import json
-
-import itertools
 import numpy as np
-from sklearn.model_selection import StratifiedKFold
-from sklearn.metrics import accuracy_score
-from sklearn.base import clone
-from sklearn.model_selection import cross_validate
-
-import random
-import numpy as np
-from sklearn.model_selection import KFold
-from sklearn.metrics import accuracy_score
-from sklearn.base import clone
-from joblib import Parallel, delayed
-from catboost import CatBoostClassifier
-from catboost import Pool
-
-from xgboost import XGBClassifier
-from lightgbm import LGBMClassifier
-from sklearn.model_selection import ParameterGrid, ParameterSampler
-import warnings
-from lightgbm.basic import LGBMDeprecationWarning
-from src.feature.feature_selection import FeatureTransformer
-import matplotlib.pyplot as plt
-from optuna.integration import MLflowCallback
-
-import numpy as np
-import pandas as pd
 import optuna
-import mlflow
+import pandas as pd
+import torch
+from catboost import CatBoostClassifier
+from joblib import Parallel, delayed
+from lightgbm import LGBMClassifier
+from sklearn.base import clone
+from sklearn.metrics import accuracy_score
+from sklearn.model_selection import ParameterGrid, StratifiedKFold
+from tqdm.auto import tqdm
 
 from config import Config
+from src.custom_models.myMLP import MyModel
+from src.feature.feature_selection import FeatureTransformer
 
 
 class Trainer:

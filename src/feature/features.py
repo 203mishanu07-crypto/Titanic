@@ -1,16 +1,10 @@
 import numpy as np
 import pandas as pd
-import scipy.stats as stats
+from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.compose import ColumnTransformer
-from sklearn.preprocessing import OneHotEncoder
+from sklearn.preprocessing import OneHotEncoder, OrdinalEncoder, StandardScaler
 from sklearn.utils.validation import check_is_fitted
-from sklearn.base import BaseEstimator,TransformerMixin
-from sklearn.preprocessing import OrdinalEncoder
-from sklearn.preprocessing import StandardScaler
 
-
-from pathlib import Path
-from tqdm import tqdm
 
 #Добавить управление объемом признаков через подачу колонок
 class FeatureTransformer(TransformerMixin, BaseEstimator):

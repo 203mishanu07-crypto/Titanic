@@ -1,9 +1,6 @@
 import torch
-from torch.utils.data import Dataset
-from sklearn.preprocessing import OrdinalEncoder
-from sklearn.preprocessing import StandardScaler
-from torch.utils.data import Dataset, DataLoader, random_split
-from sklearn.base import BaseEstimator, TransformerMixin
+from torch.utils.data import DataLoader, Dataset
+
 
 class TableDataset(Dataset):    
     def __init__(self, X_cat, X_num, y):

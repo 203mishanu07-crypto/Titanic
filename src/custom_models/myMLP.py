@@ -1,18 +1,16 @@
 from copy import deepcopy
-from pathlib import Path
-from uuid import uuid4
-import pandas as pd
 
-from sklearn.base import BaseEstimator, ClassifierMixin
-from sklearn.utils.validation import check_is_fitted
-import mlflow
 import numpy as np
+import pandas as pd
 import torch
 import torch.nn as nn
+from sklearn.base import BaseEstimator, ClassifierMixin
+from sklearn.utils.validation import check_is_fitted
 from tqdm.auto import tqdm
 
-from src.custom_datasets.dataset import transform_data
 from config import Config
+from src.custom_datasets.dataset import transform_data
+
 
 class Callback:
     def on_train_begin(self, trainer):

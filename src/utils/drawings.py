@@ -1,9 +1,10 @@
-import numpy as np
 import matplotlib.pyplot as plt
-import seaborn as sns
-from IPython.display import display
+import numpy as np
 import pandas as pd
+import seaborn as sns
 import shap
+from IPython.display import display
+
 
 class Drawer():
 # Отбирает из результатов все значения с целевым, а остальные по указаному фиксу

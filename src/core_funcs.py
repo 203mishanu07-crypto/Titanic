@@ -1,17 +1,15 @@
-from IPython.display import display
-import mlflow
-from mlflow import MlflowClient
-import pandas as pd
 import matplotlib.pyplot as plt
-import numpy as np
+import mlflow
+import pandas as pd
+from IPython.display import display
 from sklearn.model_selection import train_test_split
 
-from config import Config
 import src.modeling.train as train
 import src.utils.drawings as drawer
-from src.utils.mymlflow import Mlflow_logger
+from config import Config
 from src.feature.feature_selection import count_off_shap
 from src.feature.features import FeatureTransformer
+
 
 def setup_validation(path_to_data = Config.path_train_data, test_size = 0.2):
     data = pd.read_csv(path_to_data)

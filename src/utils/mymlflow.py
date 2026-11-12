@@ -1,14 +1,8 @@
 import mlflow
 from mlflow import MlflowClient
-import matplotlib.pyplot as plt
-import tempfile
-from pathlib import Path
-import shap
-
-import subprocess
-import time
 
 from config import Config
+
 
 #python -m mlflow server --port 5000
 class Mlflow_logger():

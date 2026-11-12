@@ -1,114 +1,23 @@
-import torch
-import torchvision
-
-import torch
-import torch.nn as nn
-
-from torchvision.datasets import ImageFolder
-from torch.utils.data import Dataset, DataLoader, random_split
-
-
-from torchvision import transforms
-
-from torchvision.transforms import v2
-
-#################################################################
-from sklearn.model_selection import KFold
-from sklearn.base import BaseEstimator,TransformerMixin
-from sklearn.preprocessing import StandardScaler
-from sklearn.metrics import accuracy_score
-
-
-from matplotlib.ticker import AutoMinorLocator, MultipleLocator
-
-from sklearn.model_selection import train_test_split, StratifiedKFold
-from sklearn.preprocessing import OrdinalEncoder
-
-from sklearn.utils import check_random_state
-
-import os
-import json
 import numpy as np
-import matplotlib.pyplot as plt
-from tqdm.auto import tqdm
-from pathlib import Path
-
 import pandas as pd
-import mlflow
-from mlflow import MlflowClient
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
-
-import sklearn.model_selection
-
-from sklearn.model_selection import KFold
-from sklearn.model_selection import train_test_split
-from sklearn.model_selection import cross_val_score
-from sklearn.model_selection import cross_validate
+from catboost import CatBoostClassifier
+from lightgbm import LGBMClassifier
 from sklearn.base import clone
-
-#GridSearch
-from sklearn.model_selection import GridSearchCV
-from sklearn.model_selection import RandomizedSearchCV, ParameterSampler
-import optuna
-
-from sklearn.preprocessing import StandardScaler #уточнить
-from sklearn.base import BaseEstimator,TransformerMixin
-#Metrics
-from sklearn.metrics import root_mean_squared_error
-from sklearn.utils.validation import check_is_fitted
-#Pipeline
-from sklearn.pipeline import Pipeline
-from sklearn.compose import ColumnTransformer
-from sklearn.preprocessing import OneHotEncoder
-#Models
-from sklearn.linear_model import LogisticRegression
-from sklearn.linear_model import Lasso
-from sklearn.neighbors import KNeighborsClassifier
-
-from sklearn.tree import DecisionTreeClassifier, export_graphviz
 from sklearn.ensemble import RandomForestClassifier
 
-from catboost import CatBoostClassifier
-from catboost import Pool
+#Models
+from sklearn.linear_model import LogisticRegression
+#Pipeline
+from sklearn.pipeline import Pipeline
 
+#GridSearch
+from sklearn.preprocessing import StandardScaler  #уточнить
 from xgboost import XGBClassifier
-from lightgbm import LGBMClassifier
-
-import shap
-import graphviz
-
-import joblib
-
-from tqdm.auto import tqdm
-from tqdm_joblib import tqdm_joblib
-
-import mlflow
-from mlflow import MlflowClient
-
-import time
-import subprocess
-import tempfile
-from pathlib import Path
-from IPython.display import display
-import json
-
-import sys
-import importlib
 
 import src.modeling.train as train
-from src.feature.features import FeatureTransformer
-from src.feature.features import encoder_transformer
 from config import Config
-import src.utils.drawings as drawer
-from src.utils.mymlflow import Mlflow_logger
 from src.custom_models.myMLP import MyModel
-from src.feature.feature_selection import count_off_shap
-from src.feature.features import DNN_encoder
-from src.utils.model_saving import ModelSaver
-from src.modeling.predict import Predictor
+from src.feature.features import DNN_encoder, FeatureTransformer, encoder_transformer
 
 
 class MyStackingRidge:

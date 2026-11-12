@@ -1,11 +1,11 @@
-import json
 from pathlib import Path
-import mlflow
+
 import numpy as np
 import pandas as pd
-import joblib
-from config import Config
 from sklearn.metrics import accuracy_score
+
+from config import Config
+
 
 class Predictor:    
     @staticmethod
