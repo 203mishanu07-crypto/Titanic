@@ -1,0 +1,24 @@
+# Titanic: project scripts and notebooks
+numpy==2.5.4
+pandas==2.3.3
+scipy==1.18.1
+joblib==1.6.0
+scikit-learn==1.9.1
+catboost==1.2.10
+lightgbm==4.7.0
+xgboost==3.4.1
+torch==2.14.1
+optuna==5.0.0
+optuna-integration[mlflow]==5.0.0
+mlflow==3.17.2
+matplotlib==3.11.2
+seaborn==0.13.2
+shap==0.54.1
+graphviz==0.21
+tqdm==4.70.1
+tqdm_joblib==0.0.5
+tabulate
+ipython==9.17.1
+ipykernel==7.4.0
+notebook==7.6.3
+ipywidgets==8.1.9
